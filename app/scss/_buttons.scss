@@ -1,0 +1,36 @@
+.btn {
+    &:hover {
+    }
+    &:focus {
+    }
+    &:active {
+    }
+    &-primary {
+        &:hover {
+        }
+    }
+    &-secondary {
+        &:hover {
+        }
+    }
+    &-contour {
+        &:hover {
+        }
+    }
+    &-filter {
+        &:hover {
+        }
+    }
+}
+input,
+textarea {
+    border: unset;
+    background: transparent;
+    &::placeholder {
+    }
+}
+button {
+    border: unset;
+    padding: unset;
+    cursor: pointer;
+}
