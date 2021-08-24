@@ -1,6 +1,6 @@
 new Swiper('.team__slider', {
-    spaceBetween: 59,
-    slidesPerView: 4,
+	spaceBetween: 59,
+	slidesPerView: 4,
 	mousewheel: {
 		sensitivity: 1,
 	},
@@ -13,13 +13,26 @@ new Swiper('.team__slider', {
 		// }
 	},
 });
+new Swiper('.slider-people', {
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+	},
+	direction: 'vertical',
+	spaceBetween: 30,
+	autoplay: {
+		delay: 4000,
+	},
+	loop: true,
+	// effect: 'fade',
+});
 new Swiper('.store__slider', {
 	pagination: {
 		el: '.swiper-pagination',
 		type: 'bullets',
 	},
-    spaceBetween: 95,
-    slidesPerView: auto,
+	spaceBetween: 95,
+	slidesPerView: auto,
 	mousewheel: {
 		sensitivity: 1,
 	},

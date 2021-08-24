@@ -8,6 +8,17 @@
     &:active {
     }
     &-primary {
+        width: 288px;
+        height: 73px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ffffff;
+        font-size: 16px;
+        letter-spacing: 0.155em;
+        text-transform: uppercase;
+        padding: 10px 25px 10px 30px;
+        border-radius: 14px;
         &:hover {
         }
     }
@@ -19,7 +30,7 @@
         background: #000000;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
-        color: #FEFEFE;
+        color: #fefefe;
         &:hover {
         }
     }
