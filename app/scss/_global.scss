@@ -7,6 +7,8 @@ body {
 	// font-size: 17px;
 	// color: $text1;
 	overflow-x: hidden;
+	background: radial-gradient(130.14% 64.83% at 47.03% 35.17%, #001930 0%, #000F1D 100%);
+	color: #ffffff;
 }
 textarea {
 	resize: none;
@@ -25,9 +27,9 @@ textarea {
 	flex: 0 0 auto;
 }
 .container {
-	// max-width: px;
+	max-width: 1100px;
 	margin: 0 auto;
-	// padding: 0px 15px;
+	padding: 0px 15px;
 	height: 100%;
 }
 input,
