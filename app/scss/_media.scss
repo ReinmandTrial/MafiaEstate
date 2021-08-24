@@ -5,6 +5,26 @@
 
 @media (max-width: 1440px) {
    .description {
+      &__bg-wave {
+         top: calc(67px + (211 - 67) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__section {
+         &:last-child {
+            .description__percentage {
+               margin-top: calc(36px + (206 - 36) * ((100vw - 320px) / (1440 - 320)));
+            }
+         }
+      }
+      &__bg-bottom {
+         width: calc(64px + (448 - 64) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(53px + (327 - 53) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__img-right {
+         width: calc(122px + (559 - 122) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(239px + (1061 - 239) * ((100vw - 320px) / (1440 - 320)));
+         margin-right: calc(-15px + (-165 - -15) * ((100vw - 320px) / (1440 - 320)));
+         margin-left: calc(-26px + (-40 - -26) * ((100vw - 320px) / (1440 - 320)));
+      }
       &__ps {
          padding: calc(17px + (40 - 17) * ((100vw - 320px) / (1440 - 320)))
             calc(17px + (110 - 17) * ((100vw - 320px) / (1440 - 320)));
@@ -44,7 +64,7 @@
          margin-right: calc(-11px + (-72 - -11) * ((100vw - 320px) / (1440 - 320)));
       }
       &__title-block {
-         margin-top: calc(-38px + (149 - -38) * ((100vw - 320px) / (1440 - 320)));
+         margin-top: calc(38px + (149 - 38) * ((100vw - 320px) / (1440 - 320)));
          margin-bottom: calc(10px + (89 - 10) * ((100vw - 320px) / (1440 - 320)));
       }
       &__bg-top {
@@ -101,6 +121,9 @@
 
 // MAX-WIDTH 991.98PX breakpoints START
 @media (max-width: 991.98px) {
+   .description__ps.large {
+      padding: 20px 10px;
+   }
    .force-to-scroll {
       display: none;
    }
@@ -122,6 +145,9 @@
 
 // MAX-WIDTH 767.98PX breakpoints START
 @media (max-width: 767.98px) {
+   .description__text {
+      max-width: 300px;
+   }
    .banner {
       &__content {
          flex-direction: column;
@@ -182,6 +208,41 @@
 
 // MAX-WIDTH 576.98PX breakpoints START
 @media (max-width: 575.98px) {
+   .description {
+      &__percentage {
+         background: linear-gradient(100.82deg, rgba(196, 196, 196, 0.12) 3.18%, rgba(255, 255, 255, 0.18) 117.28%);
+         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.33);
+         backdrop-filter: blur(500px);
+         border-radius: 6px;
+         // height: 46px;
+         padding: 10px 7px 11px 14px;
+         margin-bottom: 13px;
+      }
+      &__percentage-num {
+         width: unset;
+         height: unset;
+         background: unset;
+         box-shadow: unset;
+         backdrop-filter: unset;
+      }
+      &__ps {
+         display: none;
+         border-radius: 5px;
+         margin-bottom: 10px;
+         &.mobile,
+         &.large {
+            display: block;
+         }
+         &.large {
+            padding: 10px 15px;
+            margin-right: 26px;
+            text-align: left;
+            & li {
+               list-style: inside;
+            }
+         }
+      }
+   }
    .banner {
       &__block-text {
          max-width: 87%;

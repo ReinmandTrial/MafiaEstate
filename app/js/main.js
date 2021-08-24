@@ -21,7 +21,7 @@ new Swiper('.slider-people', {
 	direction: 'vertical',
 	spaceBetween: 30,
 	autoplay: {
-		delay: 4000,
+		delay: 3000,
 	},
 	loop: true,
 	// effect: 'fade',
