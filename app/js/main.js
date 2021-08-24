@@ -1,3 +1,39 @@
+$(document).ready(function(){
+	// burber menu 
+	$('.burger-btn').on('click',function(){
+		$('.burger-menu').addClass('open');
+		$('.burger-menu-bg').fadeIn();
+	})
+
+	// 
+    $(document).on('click', function (e) {
+		if (!$(e.target).closest(".burger-btn").length ) {
+			$('.burger-menu').removeClass('open');
+			$('.burger-menu-bg').fadeOut();
+		}
+		e.stopPropagation();
+	});
+	//burger menu end 
+
+	//плавная прокрутка якоря
+	const anchors = document.querySelectorAll('a[href*="#"]')
+
+	for (let anchor of anchors) {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault()
+
+			const blockID = anchor.getAttribute('href').substr(1)
+
+			document.getElementById(blockID).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			})
+		})
+	}
+
+})
+
+
 new Swiper('.team-slider', {
 	spaceBetween: 59,
 	slidesPerView: 3.09,
@@ -22,8 +58,9 @@ new Swiper('.team-slider', {
 			slidesPerView: 2.5,
 			spaceBetween: 20,
 		},
-	},
+	}
 });
+
 new Swiper('.slider-people', {
 	pagination: {
 		el: '.swiper-pagination',
@@ -73,4 +110,11 @@ new Swiper('.store-slider', {
 			slidesPerView: 1.7,
 		},
 	},
+		// 769: {
+		// },
+		// 576: {
+		// },
+		// 320: {
+		// }
+	
 });
