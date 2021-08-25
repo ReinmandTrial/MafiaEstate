@@ -441,6 +441,10 @@
 
 // MAX-WIDTH 767.98PX breakpoints START
 @media (max-width: 767.98px) {
+   .anchor {
+      padding-top: calc(95px + (130 - 95) * ((100vw - 320px) / (1440 - 320)));
+      margin-top: calc(-95px + (-130 - -95) * ((100vw - 320px) / (1440 - 320)));
+   }
    .blank-card {
       border-radius: 9px;
    }
@@ -458,7 +462,7 @@
       transform: translateX(80px);
    }
    .main {
-      padding-top: calc(120.8px + (161.1 - 120.8) * ((100vw - 320px) / (1440 - 320)));
+      padding-top: calc(89px + (126 - 89) * ((100vw - 320px) / (1440 - 320)));
    }
    .header {
       position: fixed;
@@ -467,9 +471,13 @@
       right: 0;
       z-index: 999;
       background: rgba(0, 25, 48, 1);
+      padding: unset;
       &__contacts {
          display: none;
       }
+   }
+   .logo {
+      margin: -12px 0;
    }
    .burger-menu {
       position: fixed;

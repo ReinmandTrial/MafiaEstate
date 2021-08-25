@@ -677,6 +677,16 @@
     }
 }
 
+.anchor {
+    padding-top: 130px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    margin-top: -130px;
+    display: inline-block;
+    position: relative;
+    height: 1px;
+    width: 1px;
+}
 .store {
     .container {
         clip-path: inset(-100vw -100vw -100vw 0);
