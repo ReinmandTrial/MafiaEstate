@@ -1,13 +1,13 @@
-$(document).ready(function(){
+$(document).ready(function () {
 	// burber menu 
-	$('.burger-btn').on('click',function(){
+	$('.burger-btn').on('click', function () {
 		$('.burger-menu').addClass('open');
 		$('.burger-menu-bg').fadeIn();
 	})
 
 	// 
-    $(document).on('click', function (e) {
-		if (!$(e.target).closest(".burger-btn").length ) {
+	$(document).on('click', function (e) {
+		if (!$(e.target).closest(".burger-btn").length) {
 			$('.burger-menu').removeClass('open');
 			$('.burger-menu-bg').fadeOut();
 		}
@@ -75,6 +75,10 @@ new Swiper('.slider-people', {
 	// effect: 'fade',
 });
 
+new Swiper('.slider-card-section', {
+	slidesPerView: 'auto',
+});
+
 new Swiper('.store-slider', {
 	pagination: {
 		el: '.swiper-pagination',
@@ -110,11 +114,11 @@ new Swiper('.store-slider', {
 			slidesPerView: 1.7,
 		},
 	},
-		// 769: {
-		// },
-		// 576: {
-		// },
-		// 320: {
-		// }
-	
+	// 769: {
+	// },
+	// 576: {
+	// },
+	// 320: {
+	// }
+
 });

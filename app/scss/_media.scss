@@ -4,6 +4,101 @@
 // MAX-WIDTH 1600PX breakpoints END
 
 @media (max-width: 1440px) {
+   .buy-tokens {
+      position: relative;
+      margin-bottom: calc(125px + (229 - 125) * ((100vw - 320px) / (1440 - 320)));
+      &__bg-money {
+         width: calc(73px + (327 - 73) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(63px + (282 - 63) * ((100vw - 320px) / (1440 - 320)));
+         top: calc(240px + (204 - 240) * ((100vw - 320px) / (1440 - 320)));
+         right: calc(-18px + (-97 - -18) * ((100vw - 320px) / (1440 - 320)));
+      }
+
+      &__btn {
+         height: calc(29px + (73 - 29) * ((100vw - 320px) / (1440 - 320)));
+         border-radius: calc(7px + (14 - 7) * ((100vw - 320px) / (1440 - 320)));
+         &.connect {
+            width: calc(111px + (256 - 111) * ((100vw - 320px) / (1440 - 320)));
+            border: 1px solid rgba(255, 255, 255, 0.74);
+         }
+         &.confirm {
+            border: 1px solid rgba(255, 255, 255, 0.74);
+            width: calc(121px + (256 - 121) * ((100vw - 320px) / (1440 - 320)));
+         }
+      }
+      &__content {
+         font-size: calc(8px + (20 - 8) * ((100vw - 320px) / (1440 - 320)));
+      }
+
+      &__wrapper {
+         max-width: calc(245px + (562 - 245) * ((100vw - 320px) / (1440 - 320)));
+      }
+
+      &__title-box {
+      }
+
+      &__title {
+         margin-right: calc(14px + (31 - 14) * ((100vw - 320px) / (1440 - 320)));
+         margin-bottom: calc(11px + (31 - 11) * ((100vw - 320px) / (1440 - 320)));
+         font-size: calc(24px + (64 - 24) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__title-img {
+         width: calc(45px + (71 - 45) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(34px + (53 - 34) * ((100vw - 320px) / (1440 - 320)));
+         margin-right: calc(-48px + (-84 - -48) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__input-title {
+         margin-bottom: calc(4px + (20 - 4) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__input {
+         padding: calc(10px + (21 - 10) * ((100vw - 320px) / (1440 - 320)))
+            calc(14px + (30 - 14) * ((100vw - 320px) / (1440 - 320)));
+         border-radius: calc(7px + (14 - 7) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__input-form {
+         margin-bottom: calc(18px + (48 - 18) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__input-box {
+         &:not(:last-child) {
+            margin-bottom: calc(12px + (38 - 12) * ((100vw - 320px) / (1440 - 320)));
+         }
+      }
+   }
+   .blank-card-section {
+      margin-bottom: calc(37px + (96 - 37) * ((100vw - 320px) / (1440 - 320)));
+      &__bg-wave {
+         top: calc(282px + (-77 - 282) * ((100vw - 320px) / (1440 - 320)));
+      }
+   }
+   .slider-card-section {
+      &__slide {
+         width: calc(155px + (309 - 155) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(213px + (491 - 213) * ((100vw - 320px) / (1440 - 320)));
+         margin-right: calc(22px + (34 - 22) * ((100vw - 320px) / (1440 - 320)));
+      }
+   }
+   .blank-card {
+      padding: calc(20px + (37 - 20) * ((100vw - 320px) / (1440 - 320)))
+         calc(11px + (32 - 11) * ((100vw - 320px) / (1440 - 320)))
+         calc(13px + (35 - 13) * ((100vw - 320px) / (1440 - 320)));
+
+      &__name {
+         font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1440 - 320)));
+      }
+
+      &__field {
+         font-size: calc(28px + (30 - 28) * ((100vw - 320px) / (1440 - 320)));
+         line-height: calc(85% + (116 - 85) * ((100vw - 320px) / (1440 - 320)));
+         margin-bottom: calc(0px + (50 - 0) * ((100vw - 320px) / (1440 - 320)));
+      }
+
+      &__btn {
+         width: calc(93px + (148 - 93) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(23px + (36 - 23) * ((100vw - 320px) / (1440 - 320)));
+         font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
+         color: #ffffff;
+      }
+   }
    .description {
       &__bg-wave {
          top: calc(67px + (211 - 67) * ((100vw - 320px) / (1440 - 320)));
@@ -160,7 +255,9 @@
          line-height: calc(5px + (17 - 5) * ((100vw - 320px) / (1440 - 320)));
       }
       &__info {
-         padding: calc(6px + (20 - 6) * ((100vw - 320px) / (1440 - 320))) 0px calc(6px + (17 - 6) * ((100vw - 320px) / (1440 - 320))) calc(8px + (21 - 8) * ((100vw - 320px) / (1440 - 320)));
+         padding: calc(6px + (20 - 6) * ((100vw - 320px) / (1440 - 320))) 0px
+            calc(6px + (17 - 6) * ((100vw - 320px) / (1440 - 320)))
+            calc(8px + (21 - 8) * ((100vw - 320px) / (1440 - 320)));
       }
       &__img {
          height: calc(148px + (444 - 148) * ((100vw - 320px) / (1440 - 320)));
@@ -171,7 +268,8 @@
       }
    }
    .footer {
-      padding: calc(13px + (42 - 13) * ((100vw - 320px) / (1440 - 320))) 0px calc(16px + (60 - 16) * ((100vw - 320px) / (1440 - 320))) 0px;
+      padding: calc(13px + (42 - 13) * ((100vw - 320px) / (1440 - 320))) 0px
+         calc(16px + (60 - 16) * ((100vw - 320px) / (1440 - 320))) 0px;
       &__logo {
          width: calc(69px + (245 - 69) * ((100vw - 320px) / (1440 - 320)));
          height: calc(18px + (97 - 18) * ((100vw - 320px) / (1440 - 320)));
@@ -181,7 +279,6 @@
          font-size: calc(4px + (14 - 4) * ((100vw - 320px) / (1440 - 320)));
          line-height: calc(5px + (18 - 5) * ((100vw - 320px) / (1440 - 320)));
          margin-bottom: calc(2px + (15 - 2) * ((100vw - 320px) / (1440 - 320)));
-         
       }
       &__description:last-child {
          margin-bottom: calc(6px + (15 - 6) * ((100vw - 320px) / (1440 - 320)));
@@ -198,7 +295,8 @@
          width: calc(79px + (113 - 79) * ((100vw - 320px) / (1440 - 320)));
          height: calc(33px + (288 - 33) * ((100vw - 320px) / (1440 - 320)));
          font-size: calc(4px + (14 - 4) * ((100vw - 320px) / (1440 - 320)));
-         padding: calc(5px + (11 - 5) * ((100vw - 320px) / (1440 - 320))) 0px 0px calc(7px + (25 - 7) * ((100vw - 320px) / (1440 - 320)));
+         padding: calc(5px + (11 - 5) * ((100vw - 320px) / (1440 - 320))) 0px 0px
+            calc(7px + (25 - 7) * ((100vw - 320px) / (1440 - 320)));
          margin-bottom: calc(4px + (20 - 4) * ((100vw - 320px) / (1440 - 320)));
       }
       &__message {
@@ -207,7 +305,10 @@
       .btn-contour {
          width: calc(79px + (288 - 79) * ((100vw - 320px) / (1440 - 320)));
          height: calc(14px + (53 - 14) * ((100vw - 320px) / (1440 - 320)));
-         padding: calc(5px + (18 - 5) * ((100vw - 320px) / (1440 - 320))) calc(8px + (19 - 8) * ((100vw - 320px) / (1440 - 320))) calc(5px + (18 - 5) * ((100vw - 320px) / (1440 - 320))) calc(9px + (31 - 9) * ((100vw - 320px) / (1440 - 320)));
+         padding: calc(5px + (18 - 5) * ((100vw - 320px) / (1440 - 320)))
+            calc(8px + (19 - 8) * ((100vw - 320px) / (1440 - 320)))
+            calc(5px + (18 - 5) * ((100vw - 320px) / (1440 - 320)))
+            calc(9px + (31 - 9) * ((100vw - 320px) / (1440 - 320)));
          font-size: calc(4px + (14 - 4) * ((100vw - 320px) / (1440 - 320)));
          .icon {
             font-size: calc(3px + (15 - 3) * ((100vw - 320px) / (1440 - 320)));
@@ -279,6 +380,9 @@
 
 // MAX-WIDTH 767.98PX breakpoints START
 @media (max-width: 767.98px) {
+   .blank-card {
+      border-radius: 9px;
+   }
    .description__text {
       max-width: 300px;
    }
@@ -292,7 +396,16 @@
       margin-top: -120px;
       transform: translateX(80px);
    }
+   .main {
+      padding-top: calc(120.8px + (161.1 - 120.8) * ((100vw - 320px) / (1440 - 320)));
+   }
    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(0, 25, 48, 1);
       &__contacts {
          display: none;
       }
@@ -306,7 +419,7 @@
       min-height: 100vh;
       z-index: 9999;
       transition: 0.5s;
-      &.open{
+      &.open {
          left: 0;
       }
    }
