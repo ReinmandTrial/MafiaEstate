@@ -19,7 +19,12 @@
         text-transform: uppercase;
         padding: 10px 25px 10px 30px;
         border-radius: 14px;
+        position: relative;
         &:hover {
+            .icon {
+                position: absolute;
+                animation: arrow-hover 1s linear infinite;
+            }
         }
     }
     &-secondary {
@@ -41,14 +46,47 @@
         padding: 18px 19px 18px 31px;
         font-weight: 500;
         letter-spacing: 0.155em;
+        transition: 0.3s;
+        position: relative;
         .icon {
             font-size: 15px;
         }
         &:hover {
+            .icon {
+                position: absolute;
+                animation: arrow-hover 1s linear infinite;
+            }
         }
     }
     &-filter {
         &:hover {
+        }
+    }
+    &-question {
+        background: linear-gradient(102.3deg, #001AFF -4.62%, #84DAFF 178.22%);
+        transition: 0.3s;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 288px;
+        height: 73px;
+        padding: 27px 26px 27px 30px;
+        border-radius: 14px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.155em;
+        text-transform: uppercase;
+        .icon {
+            font-size: 15px;
+        }
+        &:hover {
+            background: linear-gradient(102.3deg, #84DAFF -4.62%, #001AFF 178.22%);
+            .icon {
+                animation: arrow-hover 1s linear infinite;
+                position: absolute;
+            }
         }
     }
 }
@@ -63,4 +101,18 @@ button {
     border: unset;
     padding: unset;
     cursor: pointer;
+}
+.arrow-hover:hover {
+    animation: arrow-hover 1s linear infinite;
+}
+@keyframes arrow-hover {
+    0% {
+        right: 15px;
+    }
+    50% {
+        right: 0px;
+    }
+    100% {
+        right: 15px;
+    }
 }
