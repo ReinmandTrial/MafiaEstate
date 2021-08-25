@@ -4,6 +4,63 @@
 // MAX-WIDTH 1600PX breakpoints END
 
 @media (max-width: 1440px) {
+   .btn-question {
+      min-width: calc(106px + (288 - 106) * ((100vw - 320px) / (1440 - 320)));
+      min-height: calc(26px + (73 - 26) * ((100vw - 320px) / (1440 - 320)));
+      padding: calc(9px + (27 - 9) * ((100vw - 320px) / (1440 - 320)))
+         calc(11px + (27 - 11) * ((100vw - 320px) / (1440 - 320)))
+         calc(9px + (27 - 9) * ((100vw - 320px) / (1440 - 320))) calc(9px + (30 - 9) * ((100vw - 320px) / (1440 - 320)));
+      border-radius: calc(6px + (14 - 6) * ((100vw - 320px) / (1440 - 320)));
+      font-size: calc(6px + (16 - 6) * ((100vw - 320px) / (1440 - 320)));
+      .icon {
+         font-size: calc(5px + (15 - 5) * ((100vw - 320px) / (1440 - 320)));
+      }
+   }
+   .question {
+      padding-bottom: calc(58px + (306 - 58) * ((100vw - 320px) / (1440 - 320)));
+      &__item-name {
+         font-size: calc(10px + (24 - 10) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__item-description {
+         font-size: calc(6px + (13 - 6) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__item-triangle {
+         width: calc(13px + (30 - 13) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(13px + (30 - 13) * ((100vw - 320px) / (1440 - 320)));
+         .icon {
+            font-size: calc(3px + (12 - 3) * ((100vw - 320px) / (1440 - 320)));
+         }
+      }
+      &__item {
+         padding: calc(22px + (41 - 22) * ((100vw - 320px) / (1440 - 320)))
+            calc(16px + (33 - 16) * ((100vw - 320px) / (1440 - 320)))
+            calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)))
+            calc(12px + (32 - 12) * ((100vw - 320px) / (1440 - 320)));
+         border-radius: calc(6px + (8 - 6) * ((100vw - 320px) / (1440 - 320)));
+         width: calc(125px + (288 - 125) * ((100vw - 320px) / (1440 - 320)));
+         min-height: calc(62px + (173 - 62) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__box {
+         grid-row-gap: calc(17px + (48 - 17) * ((100vw - 320px) / (1440 - 320)));
+         grid-column-gap: calc(26px + (60 - 26) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__man {
+         right: calc(-7px + (0 - -7) * ((100vw - 320px) / (1440 - 320)));
+         width: calc(96px + (391 - 96) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(207px + (884 - 207) * ((100vw - 320px) / (1440 - 320)));
+         bottom: calc(-97px + (-336 - -97) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__title {
+         font-size: calc(16px + (41 - 16) * ((100vw - 320px) / (1440 - 320)));
+         padding-top: calc(0px + (22 - 0) * ((100vw - 320px) / (1440 - 320)));
+         margin-bottom: calc(7px + (27 - 7) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__description {
+         max-width: calc(146px + (412 - 146) * ((100vw - 320px) / (1440 - 320)));
+         font-size: calc(6px + (16 - 6) * ((100vw - 320px) / (1440 - 320)));
+         margin-bottom: calc(10px + (31 - 10) * ((100vw - 320px) / (1440 - 320)));
+      }
+   }
    .buy-tokens {
       position: relative;
       margin-bottom: calc(125px + (229 - 125) * ((100vw - 320px) / (1440 - 320)));
@@ -88,13 +145,15 @@
 
       &__field {
          font-size: calc(28px + (30 - 28) * ((100vw - 320px) / (1440 - 320)));
-         line-height: calc(85% + (116 - 85) * ((100vw - 320px) / (1440 - 320)));
+         line-height: calc(91% + (116 - 91) * ((100vw - 320px) / (1440 - 320)));
          margin-bottom: calc(0px + (50 - 0) * ((100vw - 320px) / (1440 - 320)));
       }
 
       &__btn {
-         width: calc(93px + (148 - 93) * ((100vw - 320px) / (1440 - 320)));
-         height: calc(23px + (36 - 23) * ((100vw - 320px) / (1440 - 320)));
+         padding: calc(6px + (9 - 6) * ((100vw - 320px) / (1440 - 320)))
+            calc(15px + (20 - 15) * ((100vw - 320px) / (1440 - 320)));
+         min-width: calc(93px + (148 - 93) * ((100vw - 320px) / (1440 - 320)));
+         // min-height: calc(23px + (36 - 23) * ((100vw - 320px) / (1440 - 320)));
          font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (1440 - 320)));
          color: #ffffff;
       }
@@ -226,6 +285,8 @@
          margin-bottom: calc(17px + (50 - 17) * ((100vw - 320px) / (1440 - 320)));
       }
       &__item {
+         margin-right: calc(25px + (95 - 25) * ((100vw - 320px) / (1440 - 320)));
+         border-radius: calc(7px + (17 - 7) * ((100vw - 320px) / (1440 - 320)));
          width: calc(163px + (609 - 163) * ((100vw - 320px) / (1440 - 320)));
          height: calc(144px + (540 - 144) * ((100vw - 320px) / (1440 - 320)));
       }
@@ -456,6 +517,19 @@
 
 // MAX-WIDTH 576.98PX breakpoints START
 @media (max-width: 575.98px) {
+   .team__title {
+      text-transform: none;
+   }
+   .question {
+      &__content {
+         flex-direction: column;
+         align-items: flex-start;
+         padding-left: 12px;
+      }
+      &__item-title {
+         margin-bottom: 0;
+      }
+   }
    .description {
       &__percentage {
          background: linear-gradient(100.82deg, rgba(196, 196, 196, 0.12) 3.18%, rgba(255, 255, 255, 0.18) 117.28%);

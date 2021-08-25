@@ -63,26 +63,27 @@
         }
     }
     &-question {
-        background: linear-gradient(102.3deg, #001AFF -4.62%, #84DAFF 178.22%);
+        background: linear-gradient(102.3deg, #001aff -4.62%, #84daff 178.22%);
         transition: 0.3s;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         position: relative;
-        width: 288px;
-        height: 73px;
+        min-width: 288px;
+        min-height: 73px;
         padding: 27px 26px 27px 30px;
         border-radius: 14px;
         color: #fff;
         font-size: 16px;
         font-weight: 500;
-        line-height: 20px;
+        line-height: 125.5%;
         letter-spacing: 0.155em;
         text-transform: uppercase;
         .icon {
             font-size: 15px;
         }
         &:hover {
-            background: linear-gradient(102.3deg, #84DAFF -4.62%, #001AFF 178.22%);
+            background: linear-gradient(102.3deg, #84daff -4.62%, #001aff 178.22%);
             .icon {
                 animation: arrow-hover 1s linear infinite;
                 position: absolute;
@@ -110,7 +111,7 @@ button {
         right: 15px;
     }
     50% {
-        right: 0px;
+        right: 5px;
     }
     100% {
         right: 15px;
