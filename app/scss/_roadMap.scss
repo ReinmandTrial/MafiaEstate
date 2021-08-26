@@ -1,0 +1,161 @@
+.roadMap{
+  position: relative;
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  &::before {
+    top: 0;
+    left: calc(130px/-2);
+    width: 130px;
+    height: 130px;
+    background-image: url("../images/roadMap__bg-left.png");
+  }
+  &::after {
+    top: 10%;
+    right: -50px;
+    width: 230px;
+    height: 230px;
+    background-image: url("../images/roadMap__bg-right.png");
+  }
+  &__description {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    max-width: 510px;
+  }
+  &__img {
+    height: 300px;
+  }
+  .svg-wrap {
+    position: absolute;
+    left: 0;
+    top: 190px;
+    width: 100vw;
+    svg {
+      width: 100%;
+    }
+  }
+  &-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__descr {
+      background: rgba(0, 0, 0, 0.16);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 33px;
+      padding: 50px 35px;
+      font-size: 16px;
+      line-height: 21px;
+      font-weight: 500;
+      max-width: 620px;
+    }
+    &__img {
+      max-width: 260px;
+      .img-wrap {
+
+      }
+      .img-info {
+        color: #5BFDD1;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+  }
+  .point-line {
+    transform: translate(163px, 100px);
+  }
+  .point-date {
+    font-family: 'QTOptimum';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.32;
+    color: #F2E2FF;
+    fill: #F2E2FF;
+  }
+}
+
+@media (max-width: 1440px) {
+  .roadMap {
+    &::before {
+      top: 0;
+      left: calc(130px/-2);
+      width: calc(80px + (130 - 80) * ((100vw - 320px) / (1440 - 320)));
+      height: calc(80px + (130 - 80) * ((100vw - 320px) / (1440 - 320)));
+    }
+    &::after {
+      top: 10%;
+      right: -50px;
+      width: calc(130px + (230 - 130) * ((100vw - 320px) / (1440 - 320)));
+      height: calc(130px + (230 - 130) * ((100vw - 320px) / (1440 - 320)));
+    }
+    &__description {
+      font-size: calc(8px + (18 - 8) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(11px + (24 - 11) * ((100vw - 320px) / (1440 - 320)));
+      max-width: calc(210px + (510 - 210) * ((100vw - 320px) / (1440 - 320)));
+    }
+    .svg-wrap {
+      top: calc(-55px + (190 + 55) * ((100vw - 320px) / (1440 - 320)));
+    }
+    &__img {
+      height: calc(130px + (300 - 130) * ((100vw - 320px) / (1440 - 320)));
+      //top: calc(130px + (300 - 130) * ((100vw - 320px) / (1440 - 320)));
+    }
+    &-slide {
+      &__descr {
+        border-radius: calc(6px + (33 - 6) * ((100vw - 320px) / (1440 - 320)));
+        padding: calc(10px + (50 - 10) * ((100vw - 320px) / (1440 - 320))) calc(10px + (35 - 10) * ((100vw - 320px) / (1440 - 320)));;
+        font-size: calc(6px + (16 - 6) * ((100vw - 320px) / (1440 - 320)));
+        line-height: calc(10px + (21 - 10) * ((100vw - 320px) / (1440 - 320)));
+        max-width: calc(200px + (620 - 200) * ((100vw - 320px) / (1440 - 320)));
+      }
+      &__img {
+        max-width: calc(70px + (260 - 70) * ((100vw - 320px) / (1440 - 320)));
+        .img-wrap {
+
+        }
+        .img-info {
+          font-size: calc(6px + (24 - 6) * ((100vw - 320px) / (1440 - 320)));
+          line-height: calc(8px + (32 - 8) * ((100vw - 320px) / (1440 - 320)));
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .roadMap {
+    &-slide {
+      &__descr {
+       text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .roadMap {
+    &-slide {
+      &__descr {
+        text-align: center;
+      }
+      &__img {
+        display: flex;
+        flex-direction: column;
+        .img-wrap {
+          order: 1;
+        }
+        .img-info {
+          order: 0;
+        }
+      }
+    }
+  }
+}
