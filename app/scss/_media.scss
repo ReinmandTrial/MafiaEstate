@@ -126,19 +126,16 @@
       &__bg-wave {
          top: calc(282px + (-77 - 282) * ((100vw - 320px) / (1440 - 320)));
       }
-   }
-   .slider-card-section {
-      &__slide {
-         width: calc(155px + (309 - 155) * ((100vw - 320px) / (1440 - 320)));
-         height: calc(213px + (491 - 213) * ((100vw - 320px) / (1440 - 320)));
-         margin-right: calc(22px + (34 - 22) * ((100vw - 320px) / (1440 - 320)));
+      &__wrap {
+         // margin-right: calc(22px + (34 - 22) * ((100vw - 320px) / (1440 - 320)));
       }
    }
    .blank-card {
       padding: calc(20px + (37 - 20) * ((100vw - 320px) / (1440 - 320)))
          calc(11px + (32 - 11) * ((100vw - 320px) / (1440 - 320)))
          calc(13px + (35 - 13) * ((100vw - 320px) / (1440 - 320)));
-
+      width: calc(155px + (309 - 155) * ((100vw - 320px) / (1440 - 320)));
+      height: calc(213px + (491 - 213) * ((100vw - 320px) / (1440 - 320)));
       &__name {
          font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1440 - 320)));
       }
@@ -332,8 +329,8 @@
       padding: calc(13px + (42 - 13) * ((100vw - 320px) / (1440 - 320))) 0px
          calc(16px + (60 - 16) * ((100vw - 320px) / (1440 - 320))) 0px;
       &__logo {
-         width: calc(69px + (245 - 69) * ((100vw - 320px) / (1440 - 320)));
-         height: calc(18px + (97 - 18) * ((100vw - 320px) / (1440 - 320)));
+         width: calc(64px + (245 - 64) * ((100vw - 320px) / (1440 - 320)));
+         height: calc(25px + (97 - 25) * ((100vw - 320px) / (1440 - 320)));
          margin-bottom: calc(5px + (15 - 5) * ((100vw - 320px) / (1440 - 320)));
       }
       &__description {
@@ -392,11 +389,27 @@
 }
 // MAX-WIDTH 1399.98PX breakpoints START
 @media (max-width: 1399.98px) {
+   .question {
+      &__content {
+         justify-content: flex-start;
+      }
+      &__text {
+         margin-right: 20px;
+      }
+   }
 }
 // MAX-WIDTH 1399.98PX breakpoints END
 
 // MAX-WIDTH 1199.98PX breakpoints START
 @media (max-width: 1199.98px) {
+   .blank-card-section {
+      &__container {
+      }
+      &__wrap {
+         width: 50%;
+         margin-bottom: 20px;
+      }
+   }
 }
 // MAX-WIDTH 1199.98PX breakpoints END
 
@@ -596,3 +609,14 @@
    }
 }
 // MAX-WIDTH 576.98PX breakpoints END
+
+@media (max-width: 420px) {
+   .blank-card-section {
+      &__container {
+      }
+      &__wrap {
+         width: 100%;
+         margin-bottom: 20px;
+      }
+   }
+}

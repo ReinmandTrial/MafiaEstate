@@ -1,4 +1,4 @@
-.roadMap{
+.roadMap {
   position: relative;
   margin-bottom: 215px;
   #svg {
@@ -15,7 +15,9 @@
   .road-path {
     stroke-width: 2px;
   }
-  .circlePoint:nth-child(-n+10), .circlePoint:nth-child(12), .circlePoint:last-child {
+  .circlePoint:nth-child(-n + 10),
+  .circlePoint:nth-child(12),
+  .circlePoint:last-child {
     display: none;
   }
   #pointText {
@@ -26,10 +28,11 @@
   }
   .circlePointHover {
     r: 8.5;
-    stroke: #3BE5B8;
+    stroke: #3be5b8;
     fill: none;
   }
-  &::before, &::after {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     display: inline-block;
@@ -91,27 +94,25 @@
     &__img {
       max-width: 373px;
       .img-wrap {
-
       }
       .img-info {
-        color: #5BFDD1;
+        color: #5bfdd1;
         font-weight: bold;
         font-size: 24px;
         line-height: 32px;
       }
     }
-
   }
   .point-line {
     transform: translate(100px, 100px);
   }
   .point-date {
-    font-family: 'QTOptimum';
+    font-family: "QTOptimum";
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.32;
-    fill: #F2E2FF;
+    fill: #f2e2ff;
   }
 }
 /*@media (min-width: 1600px) {
@@ -126,7 +127,7 @@
 }
 @media (max-width: 1440px) {
   .roadMap {
-    margin-bottom: calc(25px + (215 - 25) * ((100vw - 320px) / (1440 - 320)));
+    margin-bottom: calc(48px + (228 - 48) * ((100vw - 320px) / (1440 - 320)));
     &::before {
       top: calc(0px + (-10 + 0) * ((100vw - 320px) / (1440 - 320)));
       left: calc(-66px + (-75 + 66) * ((100vw - 320px) / (1440 - 320)));
@@ -174,25 +175,21 @@
       &__img {
         max-width: calc(70px + (260 - 70) * ((100vw - 320px) / (1440 - 320)));
         .img-wrap {
-
         }
         .img-info {
           font-size: calc(6px + (24 - 6) * ((100vw - 320px) / (1440 - 320)));
           line-height: calc(8px + (32 - 8) * ((100vw - 320px) / (1440 - 320)));
         }
       }
-
     }
   }
-
-
 }
 
 @media (max-width: 767.98px) {
   .roadMap {
     &-slide {
       &__descr {
-       text-align: center;
+        text-align: center;
       }
     }
   }
