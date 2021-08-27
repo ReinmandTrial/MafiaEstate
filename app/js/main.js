@@ -72,7 +72,18 @@ new Swiper('.slider-people', {
 		delay: 3000,
 	},
 	loop: true,
-	// effect: 'fade',
+	breakpoints: {
+		768: {
+			// simulateTouch: false,
+			allowTouchMove: true,
+		},
+		320: {
+			// mousewheelControl: false,
+			// simulateTouch: false,
+			// onlyExternal: true,
+			allowTouchMove: false,
+		},
+	}
 });
 
 new Swiper('.slider-card-section', {
