@@ -98,22 +98,24 @@ function init() {
 }
 
 function anchorGenerate(a, b) {
-    let anchors2 = anchors1.filter((current, index) => index >= a - 1 && index < b);
-
-    if (a > b) {
-        anchors2 = anchors1.filter((current, index) => index >= b - 1 && index < a);
-        anchors2.reverse();
-        reversed = true;
-    } else {
-        reversed = false;
+    if(a!=b) {
+        if (a > b) {
+            anchors2 = anchors1.filter((current, index) => index >= b - 1 && index < a);
+            anchors2.reverse();
+            reversed = true;
+        } else {
+            anchors2 = anchors1.filter((current, index) => index >= a - 1 && index < b);
+            reversed = false;
+        }
+        return anchors2;
     }
-    return anchors2;
 }
 
 function clickPosition(item) {
     clickPosX = item.getAttribute("cx");
     clickPosY = item.getAttribute("cy");
-    console.log(clickPosX, clickPosY);
+    //console.log("clickPosX", "clickPosY");
+    //console.log(clickPosX, clickPosY);
     return clickPosX, clickPosY;
     //let pos = gsap.getProperty(car,"x");
 }
@@ -124,7 +126,6 @@ function lastIndex() { //возвращает индекс в массиве, г
             lastIndexVal = i;
         }
     });
-    console.log(lastIndexVal)
     return lastIndexVal;
 
 }
@@ -162,43 +163,46 @@ function goToAnchor(index) {
 const svg = document.querySelector('#svg');
 svg.addEventListener('click', e => {
     const {clientX, clientY} = e;
-    console.log('svg click', e.target.tagName);
     if (e.target.tagName.toLowerCase() == 'circle') {
 
         const item = e.target;
         clickPosition(item);
+
         lastIndex();
 
-        gsap.to(pointText , {
-            x: clickPosX - 285,
-            y: clickPosY - 70,
-            ease: "power1.inOut",
-            alignOrigin: [0.5, 0.5],
-            duration: 4
-        });
+        if(carPosX != lastIndexVal + 1){
+            gsap.to(pointText , {
+                x: clickPosX - 285,
+                y: clickPosY - 70,
+                ease: "power1.inOut",
+                alignOrigin: [0.5, 0.5],
+                duration: 4
+            });
 
-        let pathNew = document.querySelector('.pathNew');
-        let circlePointNew = document.querySelector('.circlePointNew');
-        if(pathNew) {document.querySelector("#svg").removeChild(pathNew);}
-        if(circlePointNew) {document.querySelector("#svg").removeChild(circlePointNew);}
+            let pathNew = document.querySelector('.pathNew');
+            let circlePointNew = document.querySelector('.circlePointNew');
+            if(pathNew) {document.querySelector("#svg").removeChild(pathNew);}
+            if(circlePointNew) {document.querySelector("#svg").removeChild(circlePointNew);}
 
-        anchors2 = anchorGenerate(carPosX, lastIndexVal + 1);
-        rawPath2 = MotionPathPlugin.arrayToRawPath(anchors2, {
-            curviness: 0
-        });
-        path2 = buildPath(anchors2, rawPath2);
-        goToAnchor();
+            anchors2 = anchorGenerate(carPosX, lastIndexVal + 1);
+            //anchors2 = anchorGenerate(5, 8);
 
-        carPosX = lastIndexVal + 1;
-        slideIndex = carPosX - 7;
+            rawPath2 = MotionPathPlugin.arrayToRawPath(anchors2, {
+                curviness: 0
+            });
+            path2 = buildPath(anchors2, rawPath2);
+            goToAnchor();
 
-        slide.forEach(function (item) {
-            console.log("xxxxxxxxxxxxxx"+ slideIndex);
-            item.classList.remove('active');
-            if (slide[slideIndex] ){
-                slide[slideIndex].classList.add('active');
-            }
-        });
+            carPosX = lastIndexVal + 1;
+            slideIndex = carPosX - 7;
+
+            slide.forEach(function (item) {
+                item.classList.remove('active');
+                if (slide[slideIndex] ){
+                    slide[slideIndex].classList.add('active');
+                }
+            });
+        }
     }
 });
 
