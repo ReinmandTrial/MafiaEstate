@@ -1,6 +1,8 @@
 gsap.registerPlugin(MotionPathPlugin);
 let car = document.querySelector("#car"),
     slide = document.querySelectorAll(".roadMap-slide"),
+    pointDate = document.querySelector(".point-date"),
+    roadMapSlideDate = document.querySelectorAll(".roadMap-slide__date"),
     pointText = document.querySelector("#pointText"),
     clickPosX,
     clickPosY,
@@ -202,6 +204,12 @@ svg.addEventListener('click', e => {
                     slide[slideIndex].classList.add('active');
                 }
             });
+
+            let roadMapSlideDateActive = document.querySelector(".roadMap-slide.active").querySelector('.roadMap-slide__date');
+            let roadMapSlideDateActiveText = roadMapSlideDateActive.textContent;
+
+            //console.log(roadMapSlideDateActiveText);
+            pointDate.textContent = roadMapSlideDateActiveText;
         }
     }
 });
