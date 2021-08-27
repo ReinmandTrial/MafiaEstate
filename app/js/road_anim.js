@@ -1,6 +1,6 @@
 gsap.registerPlugin(MotionPathPlugin);
 let car = document.querySelector("#car"),
-    slide = document.querySelectorAll(".slide"),
+    slide = document.querySelectorAll(".roadMap-slide"),
     pointText = document.querySelector("#pointText"),
     clickPosX,
     clickPosY,
@@ -60,11 +60,8 @@ let car = document.querySelector("#car"),
             x: 1440,
             y: 9.62354
         }
-
-
     ], // anchor coordinates (feel free to change these if you want)
 
-    //anchors2 = [{x:50, y:130}, {x:300, y:10}, {x:500, y:70}],
     lastIndexVal = 0,
     anchors2,
     rawPath,
@@ -78,35 +75,26 @@ let car = document.querySelector("#car"),
     carPosX = 7,
     reversed = false;
 
-//console.log(lastIndexVal);
-
 function init() {
     lastIndexVal = lastIndex();
     rawPath = MotionPathPlugin.arrayToRawPath(anchors1, {
         curviness: 0
     });
-/*    circlePoint = document.querySelectorAll(".circlePoint");
 
-    circlePoint.forEach(function (item) {
-        for(i=0; i<8; i++) {
-            console.log(item);
-        }
-    });*/
-    //path = buildPath(anchors1, rawPath);
+    /*    circlePointt = document.querySelectorAll('.circlePoint');
+        circlePointHover = document.querySelectorAll('.circlePointHover');
 
-    //document.querySelector('.pathNew').classList.add('path_first');
-    //document.querySelector('.path_first').classList.remove('pathNew');
+        gsap.from(circlePointHover,{
+            opacity: 0,
+            duration: 2
+        });
 
-    //console.log("init");
+        gsap.utils.toArray(circlePointt).forEach(item => {
+            let hover = gsap.to(circlePointHover, {scale: 3, duration: 1.5, paused: true, ease: "power1.inOut"});
+            item.addEventListener("mouseenter", () => hover.play());
+            item.addEventListener("mouseleave", () => hover.reverse());
+        });*/
 
-    //document.querySelector("#svg").removeChild(pathNew);
-    //circlePoint = document.querySelectorAll(".circlePoint");
-/*
-    drawPath = gsap.from(path, {
-        ease: "none",
-        paused: true,
-        duration: 4
-    });*/
 }
 
 function anchorGenerate(a, b) {
@@ -131,8 +119,6 @@ function clickPosition(item) {
 }
 
 function lastIndex() { //возвращает индекс в массиве, где находилась машина
-    //let lastIndexVal;
-    //console.log(lastIndexVal);
     anchors1.forEach(function (item, i, arr) {
         if (clickPosX == item.x && clickPosY == item.y) {
             lastIndexVal = i;
@@ -147,8 +133,6 @@ init();
 // jump to a specific anchor (animate the tween to that progress value)
 function goToAnchor(index) {
     curIndex = index;
-    //!!!
-
     gsap.to(drawPath, {
         //progress: progressArray[curIndex],
         overwrite: true,
@@ -173,7 +157,6 @@ function goToAnchor(index) {
             offsetY: -4
         }
     });
-
 }
 
 const svg = document.querySelector('#svg');
@@ -207,11 +190,10 @@ svg.addEventListener('click', e => {
         goToAnchor();
 
         carPosX = lastIndexVal + 1;
-        slideIndex = carPosX - 5;
+        slideIndex = carPosX - 7;
 
         slide.forEach(function (item) {
-            //console.log(item.classList.toggle('active'));
-            //console.log(item);
+            console.log("xxxxxxxxxxxxxx"+ slideIndex);
             item.classList.remove('active');
             if (slide[slideIndex] ){
                 slide[slideIndex].classList.add('active');
@@ -223,7 +205,6 @@ svg.addEventListener('click', e => {
 // -- setup ---
 function buildPath(anchors, rawPath) {
 
-
     let svg = document.querySelector("#svg"),
         //pathTemplate = createSVG("path", svg, {d: MotionPathPlugin.rawPathToString(rawPath)}),
         path = createSVG("path", svg, {
@@ -234,7 +215,6 @@ function buildPath(anchors, rawPath) {
         i;
         gsap.set(path, {
             stroke: "#3BE5B8",
-            strokeWidth: 2,
             fill: "none"
         });
 
