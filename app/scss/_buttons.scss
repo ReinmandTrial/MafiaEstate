@@ -8,17 +8,17 @@
     &:active {
     }
     &-primary {
-        width: 288px;
-        height: 73px;
+        width: 244px;
+        height: 62px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: #ffffff;
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 0.155em;
         text-transform: uppercase;
         padding: 10px 25px 10px 30px;
-        border-radius: 14px;
+        border-radius: 10px;
         position: relative;
         &:hover {
             .icon {
