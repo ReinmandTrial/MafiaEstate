@@ -156,7 +156,7 @@
       }
    }
    .description {
-      .big-arrow  {
+      .big-arrow {
          font-size: calc(6px + (26 - 6) * ((100vw - 320px) / (1440 - 320)));
       }
       &__bg-wave {
@@ -182,10 +182,16 @@
       &__ps {
          width: calc(290px + (662 - 290) * ((100vw - 320px) / (1440 - 320)));
          height: calc(59px + (119 - 59) * ((100vw - 320px) / (1440 - 320)));
-         padding: calc(17px + (33 - 17) * ((100vw - 320px) / (1440 - 320))) calc(17px + (60 - 17) * ((100vw - 320px) / (1440 - 320))) calc(17px + (23 - 17) * ((100vw - 320px) / (1440 - 320))) calc(17px + (60 - 17) * ((100vw - 320px) / (1440 - 320)));
+         padding: calc(17px + (33 - 17) * ((100vw - 320px) / (1440 - 320)))
+            calc(17px + (60 - 17) * ((100vw - 320px) / (1440 - 320)))
+            calc(17px + (23 - 17) * ((100vw - 320px) / (1440 - 320)))
+            calc(17px + (60 - 17) * ((100vw - 320px) / (1440 - 320)));
       }
-      &__ps.large { 
-         padding: calc(11px + (43 - 11) * ((100vw - 320px) / (1440 - 320))) calc(17px + (52 - 17) * ((100vw - 320px) / (1440 - 320))) calc(8px + (38 - 8) * ((100vw - 320px) / (1440 - 320))) calc(6px + (31 - 6) * ((100vw - 320px) / (1440 - 320)));
+      &__ps.large {
+         padding: calc(11px + (43 - 11) * ((100vw - 320px) / (1440 - 320)))
+            calc(17px + (52 - 17) * ((100vw - 320px) / (1440 - 320)))
+            calc(8px + (38 - 8) * ((100vw - 320px) / (1440 - 320)))
+            calc(6px + (31 - 6) * ((100vw - 320px) / (1440 - 320)));
          width: calc(182px + (563 - 182) * ((100vw - 320px) / (1440 - 320)));
          height: calc(74px + (164 - 74) * ((100vw - 320px) / (1440 - 320)));
          li {
@@ -435,6 +441,9 @@
 
 // MAX-WIDTH 991.98PX breakpoints START
 @media (max-width: 991.98px) {
+   .logo {
+      margin-right: 20px;
+   }
    .description__ps.large {
       padding: 20px 10px;
    }
@@ -474,9 +483,14 @@
 
 // MAX-WIDTH 767.98PX breakpoints START
 @media (max-width: 767.98px) {
+   .menu {
+   }
+   .burger__header {
+      display: flex;
+   }
    .anchor {
-      padding-top: calc(95px + (130 - 95) * ((100vw - 320px) / (1440 - 320)));
-      margin-top: calc(-95px + (-130 - -95) * ((100vw - 320px) / (1440 - 320)));
+      padding-top: calc(95px + (130 - 95) * ((100vw - 320px) / (767 - 320)));
+      margin-top: calc(-95px + (-130 - -95) * ((100vw - 320px) / (767 - 320)));
    }
    .blank-card {
       border-radius: 9px;
@@ -530,17 +544,20 @@
       padding-top: 10px;
       &__item {
          font-size: 10px;
-         margin-bottom: 8px;
+         // margin-bottom: 8px;
+         margin: 0 15px 0 15px;
       }
       &__link {
          display: block;
-         padding: 6.33px 0 6.33px 16.33px;
+         padding: 13px 0 7px 16.33px;
          min-width: 100px;
+         text-transform: uppercase;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
          &:active {
-            color: #BB4850;
+            color: #bb4850;
          }
          &:hover {
-            color: #BB4850;
+            color: #bb4850;
          }
       }
    }
