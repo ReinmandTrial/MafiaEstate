@@ -1,6 +1,9 @@
 .roadMap {
   position: relative;
   margin-bottom: 215px;
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
   #svg {
     overflow: visible;
     height: 100%;
