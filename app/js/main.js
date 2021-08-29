@@ -35,44 +35,56 @@ $(document).ready(function () {
 
 
 new Swiper('.team-slider', {
-	spaceBetween: 59,
-	slidesPerView: 3.09,
+	// spaceBetween: 59,
+	// slidesPerView: 3.09,
+	slidesPerView: 'auto',
 	// mousewheel: {
 	// 	sensitivity: 1,
 	// },
-	breakpoints: {
-		1280: {
-			slidesPerView: 3.09,
-		},
-		768: {
-			slidesPerView: 4,
-			spaceBetween: 40,
-		},
-		// 769: {
-		// },
-		576: {
-			slidesPerView: 3,
-			spaceBetween: 30,
-		},
-		320: {
-			slidesPerView: 2.5,
-			spaceBetween: 20,
-		},
-	}
+	// breakpoints: {
+	// 	1280: {
+	// 		slidesPerView: 3.09,
+	// 	},
+	// 	768: {
+	// 		slidesPerView: 4,
+	// 		spaceBetween: 40,
+	// 	},
+	// 	// 769: {
+	// 	// },
+	// 	576: {
+	// 		slidesPerView: 3,
+	// 		spaceBetween: 30,
+	// 	},
+	// 	320: {
+	// 		slidesPerView: 2.5,
+	// 		spaceBetween: 20,
+	// 	},
+	// }
 });
 
 new Swiper('.slider-people', {
-	pagination: {
-		el: '.swiper-pagination',
-		type: 'bullets',
-	},
+	// pagination: {
+	// 	el: '.swiper-pagination',
+	// 	type: 'bullets',
+	// },
 	direction: 'vertical',
 	spaceBetween: 30,
-	autoplay: {
-		delay: 3000,
-	},
+	// autoplay: {
+	// 	delay: 3000,
+	// },
 	loop: true,
-	// effect: 'fade',
+	breakpoints: {
+		768: {
+			// simulateTouch: false,
+			allowTouchMove: true,
+		},
+		320: {
+			// mousewheelControl: false,
+			// simulateTouch: false,
+			// onlyExternal: true,
+			allowTouchMove: false,
+		},
+	}
 });
 
 new Swiper('.slider-card-section', {
