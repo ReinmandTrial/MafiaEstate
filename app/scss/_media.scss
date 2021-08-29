@@ -527,26 +527,20 @@
    }
    .menu {
       flex-direction: column;
-      align-items: flex-end;
-      padding-top: 87px;
+      padding-top: 10px;
       &__item {
          font-size: 10px;
-         margin-right: unset;
          margin-bottom: 8px;
       }
       &__link {
          display: block;
          padding: 6.33px 0 6.33px 16.33px;
          min-width: 100px;
-         border-radius: 3px 0 0 3px;
-         background: rgba(0, 71, 255, 0.5);
-         border-bottom: unset;
          &:active {
-            background: #0047ff;
+            color: #BB4850;
          }
          &:hover {
-            color: inherit;
-            border-bottom: unset;
+            color: #BB4850;
          }
       }
    }
