@@ -426,6 +426,14 @@
 }
 // MAX-WIDTH 1399.98PX breakpoints END
 
+// MAX-WIDTH 1279.98PX breakpoints END
+@media (max-width: 1279.98px) {
+   .rightbar {
+      display: none;
+   }
+}
+// MAX-WIDTH 1279.98PX breakpoints END
+
 // MAX-WIDTH 1199.98PX breakpoints START
 @media (max-width: 1199.98px) {
    .blank-card-section {
@@ -439,8 +447,69 @@
 }
 // MAX-WIDTH 1199.98PX breakpoints END
 
+// MAX-WIDTH 1023.98PX breakpoints END
+@media (max-width: 1023.98px) {
+   .pages-body__burger-btn {
+      display: flex;
+   }
+   .header-pages {
+      &__content {
+         position: relative;
+      }
+      &__logo-block {
+         position: absolute;
+         transform: translate(-50%, -50%);
+         top: 50%;
+         left: 50%;
+         width: unset;
+         border-right: unset;
+      }
+   }
+   .leftbar {
+      // background-color: rgba(24, 48, 85, 0.3);
+      background: transparent;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      z-index: 999;
+      overflow: hidden;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+         width: 0;
+      }
+      transition: 0.5s;
+      z-index: 999;
+      box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 4px, rgba(0, 0, 0, 0.28) 0px 4px 8px;
+      border-right: 1px solid rgb(230, 236, 241);
+
+      &.open {
+         left: 0;
+      }
+      &__content {
+         background: #f5f7f9;
+         height: calc(100vh - 80px);
+      }
+      &__header {
+         display: block;
+      }
+   }
+   .body-of-site {
+      &__container {
+         justify-content: center;
+      }
+   }
+}
+// MAX-WIDTH 1023.98PX breakpoints END
+
 // MAX-WIDTH 991.98PX breakpoints START
 @media (max-width: 991.98px) {
+   .body-of-site {
+      &__content {
+         margin: 0;
+         padding: 0 24px 24px 24px;
+      }
+   }
    .logo {
       margin-right: 20px;
    }
@@ -483,7 +552,47 @@
 
 // MAX-WIDTH 767.98PX breakpoints START
 @media (max-width: 767.98px) {
-   .menu {
+   .leftbar {
+      &__header {
+         height: 60px;
+      }
+      &__content {
+         height: calc(100vh - 60px);
+      }
+   }
+   .body-of-site-content__archore {
+      opacity: 1;
+      pointer-events: auto;
+   }
+   .body-of-site.main {
+      padding: unset;
+   }
+   .body-of-site-footer {
+      &__buttons-block {
+         flex-wrap: wrap-reverse;
+         margin: -12px;
+      }
+      &__btn {
+         margin: 12px;
+      }
+      &__bottom-line {
+         flex-wrap: wrap;
+      }
+      &__update {
+         width: 100%;
+         margin-bottom: 16px;
+      }
+      &__question {
+         width: 100%;
+         justify-content: space-between;
+      }
+   }
+   .header-pages {
+      height: 60px;
+      .logo {
+         height: 30px;
+         width: 30px;
+      }
    }
    .burger__header {
       display: flex;

@@ -1,18 +1,121 @@
+// tabs start
+$(document).ready(function () {
+	var hash = window.location.hash.substr(1);
+	var url = $(location).attr('href').split('#')[1];
+	if (url == undefined || $('.header-pages__logo-block').attr('href') == url + '.html') {
+		$($('a.js-leftbar__item')).each(function () {
+			if ($(this).hasClass('leftbar__item')) {
+				$(this).addClass('active');
+				return false;
+			}
+		});
+	} else {
+		var pageTitle = url.split('/')[1] + '.html';
+		$($('a.js-leftbar__item')).each(function () {
+			if ($(this).hasClass('leftbar__item')) {
+				if ($(this).attr('href').split('/')[1] == pageTitle || $(this).attr('href') == pageTitle) {
+					$(this).addClass('active');
+				}
+			}
+		})
+	}
+	var href = $('a.js-leftbar__item').each(function () {
+		var href = $(this).attr('href');
+		if (hash == href.substr(0, href.length - 5)) {
+			var toLoad = hash + '.html #content';
+			$('#content').load(toLoad)
+		}
+	});
+
+	$(document).on('click', 'a.js-leftbar__item, .js-btn', function () {
+		if ($(this).hasClass('leftbar__item')) {
+			$($('a.js-leftbar__item')).each(function () {
+				$(this).removeClass('active');
+			})
+			$(this).addClass('active');
+		} else if ($(this).hasClass('header-pages__logo-block')) {
+			$($('a.js-leftbar__item')).each(function () {
+				$(this).removeClass('active');
+			})
+			$($('a.js-leftbar__item')).each(function () {
+				if ($(this).hasClass('leftbar__item')) {
+					$(this).addClass('active');
+					return false;
+				}
+			})
+		} else if ($(this).hasClass('body-of-site-footer__btn')) {
+			var i = 0;
+			if ($(this).hasClass('body-of-site-footer__btn-next')) {
+
+				$($('a.js-leftbar__item')).each(function (index) {
+					if ($(this).hasClass('leftbar__item') && $(this).hasClass('active')) {
+						$(this).removeClass('active');
+						i = index;
+						return false;
+					}
+				})
+
+				$($('a.js-leftbar__item')).each(function (index) {
+					if (index == i + 1) {
+						$(this).addClass('active');
+						return false;
+					}
+				})
+
+			} else {
+				$($('a.js-leftbar__item')).each(function (index) {
+					if ($(this).hasClass('leftbar__item') && $(this).hasClass('active')) {
+						$(this).removeClass('active');
+						i = index;
+						return false;
+					}
+				})
+
+				$($('a.js-leftbar__item')).each(function (index) {
+					if (index == i - 1) {
+						$(this).addClass('active');
+						return false;
+					}
+				})
+
+			}
+
+		}
+		var toLoad = $(this).attr('href') + ' #content';
+		$('#content').fadeOut('fast', loadContent);
+		window.location.hash = $(this).attr('href').substr(0, $(this).attr('href').length - 5);// название файла
+		function loadContent() {
+			$('#content').load(toLoad, '', showNewContent())
+		}
+		function showNewContent() {
+			$('#content').fadeIn();
+		}
+		return false;
+	});
+
+});
+//tabs end
+
 $(document).ready(function () {
 	// burber menu 
-	$('.burger-btn').on('click', function () {
-		$('.burger-menu').addClass('open');
-		$('.burger-menu-bg').fadeIn();
+	$('.burger-btn, .pages-body__burger-btn').on('click', function () {
+		$('.burger-menu, .leftbar').addClass('open');
+		$('.burger-menu-bg, .leftbar__bg').fadeIn();
 	})
 
 	// 
 	$(document).on('click', function (e) {
-		if (!$(e.target).closest(".burger-btn").length) {
-			$('.burger-menu').removeClass('open');
-			$('.burger-menu-bg').fadeOut();
+		if (!$(e.target).closest(".burger-btn, .pages-body__burger-btn, .leftbar").length) {
+			$('.burger-menu, .leftbar').removeClass('open');
+			$('.burger-menu-bg, .leftbar__bg').fadeOut();
 		}
 		e.stopPropagation();
 	});
+
+	$('.pages-body__close-btn, .leftbar__item').on('click', function () {
+		$('.leftbar').removeClass('open');
+		$('.leftbar__bg').fadeOut();
+	})
 	//burger menu end 
 
 	//плавная прокрутка якоря
@@ -35,53 +138,18 @@ $(document).ready(function () {
 
 
 new Swiper('.team-slider', {
-	// spaceBetween: 59,
-	// slidesPerView: 3.09,
 	slidesPerView: 'auto',
-	// mousewheel: {
-	// 	sensitivity: 1,
-	// },
-	// breakpoints: {
-	// 	1280: {
-	// 		slidesPerView: 3.09,
-	// 	},
-	// 	768: {
-	// 		slidesPerView: 4,
-	// 		spaceBetween: 40,
-	// 	},
-	// 	// 769: {
-	// 	// },
-	// 	576: {
-	// 		slidesPerView: 3,
-	// 		spaceBetween: 30,
-	// 	},
-	// 	320: {
-	// 		slidesPerView: 2.5,
-	// 		spaceBetween: 20,
-	// 	},
-	// }
 });
 
 new Swiper('.slider-people', {
-	// pagination: {
-	// 	el: '.swiper-pagination',
-	// 	type: 'bullets',
-	// },
 	direction: 'vertical',
 	spaceBetween: 30,
-	// autoplay: {
-	// 	delay: 3000,
-	// },
 	loop: true,
 	breakpoints: {
 		768: {
-			// simulateTouch: false,
 			allowTouchMove: true,
 		},
 		320: {
-			// mousewheelControl: false,
-			// simulateTouch: false,
-			// onlyExternal: true,
 			allowTouchMove: false,
 		},
 	}
@@ -96,42 +164,7 @@ new Swiper('.store-slider', {
 		el: '.swiper-pagination',
 		type: 'bullets',
 	},
-	// spaceBetween: 95,
 	slidesPerView: 'auto',
-	// slidesPerView: 1.68,
-	// mousewheel: {
-	// 	sensitivity: 1,
-	// },
-	// breakpoints: {
-	// 	1439: {
-	// 		spaceBetween: 95,
-	// 		slidesPerView: 1.68,
-	// 	},
-	// 	1280: {
-	// 		spaceBetween: 75,
-	// 		slidesPerView: 1.8,
-	// 	},
-	// 	992: {
-	// 		slidesPerView: 2.2,
-	// 	},
-	// 	769: {
-	// 		spaceBetween: 30,
-	// 		// slidesPerView: 2,	
-	// 	},
-	// 	576: {
-	// 		spaceBetween: 25,
-	// 		slidesPerView: 2,
-	// 	},
-	// 	320: {
-	// 		spaceBetween: 25,
-	// 		slidesPerView: 1.7,
-	// 	},
-	// },
-	// 769: {
-	// },
-	// 576: {
-	// },
-	// 320: {
-	// }
 
 });
+
